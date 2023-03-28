@@ -125,7 +125,7 @@ p {
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: opacity 0.1s;
+  transition: opacity 0.3s;
 }
 .side:hover {
   opacity: 0;
