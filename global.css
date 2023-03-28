@@ -1,0 +1,156 @@
+
+:root {
+  --l: 40px;
+  --p_h_l: calc(var(--l) / 2);
+  --n_h_l: calc(calc(var(--l) / 2) - var(--l));
+  
+}
+/*
+
+      --l = length
+      --p_h_l = positiv half length
+      --n_h_l = negativ half length
+  */
+html {
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+body {
+  color: #001155;
+  background-color: #c3ddff;
+  margin: 0;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #001155;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  word-break: break-word;
+  margin: 12px 0;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1;
+}
+
+p {
+  margin: 12px 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  padding-top: 48px;
+}
+
+.header-button {
+  display: flex;
+  flex-direction: column;
+  min-width: 75px;
+  min-height: 75px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  height: 100%;
+  margin-top: -120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.spinningbox {
+  position: relative;
+  width: var(--l);
+  height: var(--l);
+  background-color: transparent;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg) rotateY(45deg);
+  animation: rotateCube 45s linear infinite;
+}
+@keyframes rotateCube {
+  50% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+.side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+.side:hover {
+  opacity: 0;
+}
+.front {
+  background: rgb(0, 255, 183);
+  transform: translateZ(var(--p_h_l));
+}
+.back {
+  background: rgb(0, 255, 183);
+  transform: translateZ(var(--n_h_l));
+}
+.right {
+  background: rgb(255, 104, 212);
+  transform: rotateY(90deg) translateZ(var(--p_h_l));
+}
+.left {
+  background: rgb(255, 104, 212);
+  transform: rotateY(90deg) translateZ(var(--n_h_l));
+}
+.top {
+  background: rgb(255, 207, 124);
+  transform: rotateX(90deg) translateZ(var(--p_h_l));
+}
+.bottom {
+  background: rgb(255, 207, 124);
+  transform: rotateX(90deg) translateZ(var(--n_h_l));
+}
